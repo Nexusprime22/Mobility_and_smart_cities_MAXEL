@@ -1,0 +1,202 @@
+for equivalence class
+if
+(a,x) - - - (a,y)
+(a,b) (b,a) - - -
+
+???
+
+------
+
+louage problem = (1)greedy + linear complexity
+
+(2) dynamic programming is an alternative solution (recursive) to greedy algo
+what could be the final solution to determine
+
+(3) multimodal solution
+based on passengers first, and itinerary of each driver
+this pb is more than exponential, so we don't use list of passengers, but list of cars available to reduce complexity
+
+-------
+
+extract edges from graph
+
+# Define the set of states
+states = {1, 2, 3, 5, 10, 20, 30}
+
+# Initialize an empty set to store transitive edges
+transitive_edges = set()
+
+# Loop through all pairs of states
+for state1 in states:
+    for state2 in states:
+        if state1 != state2:
+            # Check if there is a transitive relationship from state1 to state2
+            for intermediate_state in states:
+                if state1 != intermediate_state and state2 != intermediate_state:
+                    # Check if there is a path from state1 to intermediate_state and from intermediate_state to state2
+                    if (state1, intermediate_state) in transitive_edges and (intermediate_state, state2) in transitive_edges:
+                        # Add the transitive edge from state1 to state2
+                        transitive_edges.add((state1, state2))
+
+# Print the transitive edges
+for edge in transitive_edges:
+    print(edge)
+
+-----
+
+substract transitive relations, restart process if one modification/substraction of (x,z) because (x,y) and (y,z)
+
+we use the set of edges found before, and list all the edges
+
+# Define the set of states
+states = {1, 2, 3, 5, 10, 20, 30}
+
+# Initialize a set of edges representing the relations between states
+edges = {(1, 5), (1, 10), (1, 20), (2, 10), (2, 20), (3, 10), (3, 20), (5, 10), (5, 20), (10, 20), (20, 30)}
+
+def find_transitive_edges(edges):
+    transitive_edges = set()
+    for state1 in states:
+        for state2 in states:
+            if state1 != state2:
+                for intermediate_state in states:
+                    if (state1, intermediate_state) in edges and (intermediate_state, state2) in edges:
+                        transitive_edges.add((state1, state2))
+    return transitive_edges
+
+def subtract_transitive_edges(edges, transitive_edges):
+    return edges - transitive_edges
+
+while True:
+    # Find transitive edges in the current set of edges
+    transitive_edges = find_transitive_edges(edges)
+
+    # If no more transitive edges are found, break the loop
+    if not transitive_edges:
+        break
+
+    # Subtract transitive edges from the set of edges
+    edges = subtract_transitive_edges(edges, transitive_edges)
+
+# Print the final set of edges without transitive relations
+print(edges)
+
+
+(we have to determine a jk)
+---
+
+if we have a pb polynomial complexity with a factor 3 (n^3)
+
+-----
+
+we do transitive closure until modification (modif = adding a transitivity)
+
+transitive closure = dijkstra
+
+# Define the set of states
+states = {1, 2, 3, 5, 10, 20, 30}
+
+# Initialize a set of edges representing the relations between states
+edges = {(1, 5), (1, 10), (1, 20), (2, 10), (2, 20), (3, 10), (3, 20), (5, 10), (5, 20), (10, 20), (20, 30)}
+
+def find_missing_transitive_edges(states, edges):
+    missing_transitive_edges = set()
+    for state1 in states:
+        for state2 in states:
+            if state1 != state2:
+                for intermediate_state in states:
+                    if (state1, intermediate_state) in edges and (intermediate_state, state2) in edges:
+                        # If a transitive relationship is found, add it to the missing_transitive_edges set
+                        if (state1, state2) not in edges:
+                            missing_transitive_edges.add((state1, state2))
+			    break
+    return missing_transitive_edges
+
+while True:
+    # Find missing transitive edges in the current set of edges
+    missing_transitive_edges = find_missing_transitive_edges(states, edges)
+
+    # If no more missing transitive edges are found, break the loop
+    if not missing_transitive_edges:
+        break
+
+    # Add the missing transitive edges to the set of edges
+    edges.update(missing_transitive_edges)
+
+# Print the final set of edges with all possible transitive relations
+print(edges)
+
+
+----------
+
+Let X = {1, 2, 3, 5, 10, 20, 30}, be a set partially ordered
+by the relation x | y (x divides y).
+
+For the following part,
+– P_1 = {2,3,5,10}
+
+the upper bound of P, {30}
+the lower bound of P, {1}
+the maximum elements, {3, 10}
+the minimum elements, {2, 3, 5}
+the largest element of P, inexistant
+the smallest element of P, inexistant
+the u.b., {30}
+the l.b.,
+the universal element
+and the null element, {1}
+
+(max of P1, the one in P1 diving the most elements in X) BECAUSE RELATION AS LINKS (not numbers) (no elt greater than 3, no 4, even if 5)
+
+------------
+
+Lower Bound (L.B.) of P: An element 'm' of set X is a lower bound of set P if 'm' is less than or equal to every element 'x' in P.
+
+Upper Bound (U.B.) of P: An element 'M' of set X is an upper bound of set P if 'M' is greater than or equal to every element 'x' in P.
+
+Maximal Element of P: An element 'M' of set P is maximal if there is no element 'x' in P such that 'x' is greater than 'M'.
+
+Minimal Element of P: An element 'M' of set P is minimal if there is no element 'x' in P such that 'x' is less than 'M'.
+
+Largest Element (Maximum) of P: An element 'E' of set P is the largest element (maximum) if 'E' belongs to P, and for all elements 'x' in P, 'E' is greater than or equal to 'x'.
+
+Smallest Element (Minimum) of P: An element 'e' of set P is the smallest element (minimum) if 'e' belongs to P, and for all elements 'x' in P, 'e' is less than or equal to 'x'.
+
+Upper Bound (U.B.) of P (Supremum): The upper bound 'B' (also noted as 'supP') of set P is the smallest element among all upper bounds of P.
+
+Lower Bound (L.B.) of P (Infimum): The lower bound 'b' (also noted as 'infP') of set P is the largest element among all lower bounds of P.
+
+Universal Element of X: The universal element of set X is the largest element in X. In this context, it's the element that is greater than or equal to all elements in X.
+
+Null Element of X: The null element of set X is the smallest element in X. In this context, it's the element that is less than or equal to all elements in X.
+
+-------
+
+
+diameter as the greatest (cheapest) shortest path between 2 elts
+
+itinerary = permutation
+which is a chain of nodes
+
+-------
+
+regeneration point
+L : permutation
+
+-------
+
+spanning tree : 
+
+-----
+
+opened node = 
+
+closed node =
+
+------
+
+indepth = we consider the last open node
+
+
+------
+

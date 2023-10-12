@@ -1,0 +1,74 @@
+why make change is important ?
+greedy algo is the most efficient algo whatever the problem is
+the complexity will always be linear O(n), it means we have to prove we have a linear line on a graph (x: size, y: time of exec or mem/rsrc consumption or energy consumption); whatever is the size of the pb or the kind of algo or the complexity
+result will be good (best), wrong, or right (no solution or 1 solution)
+
+initialization of mem may be a pb
+10^9 instructions / seconds
+
+we need demonstration, then we can show which solution is the best
+
+if we compute "all solutions", we have a non polynomial (np pb) complexity
+(half u, right side; on graph)
+
+WE NEED THE GRAPH OF COMPLEXITY at the end of our work
+
+so greedy better because linear C(n)
+
+-------
+
+we also need to present the definition of the list, especially if the list is built with specific properties
+e.g : list of coins with amount, (list with x1 > x2)
+L = {x0,...xi,xn, for all i € [0,n], xi+1 < xi}
+
+we need drawings
+
+-------
+(louage pb)
+even if we have bilions of cars, passengers
+we must be sure to have an answer, to provide an answer at time
+
+-----
+
+C is the most efficient lg for the runtime of any program
+Java is second (memory garbage awfful like Python)
+
+----
+
+difference between storing result in an array or a buffer
+(this is the same)
+(writing on a buffer consumes more, we call a library to write things which is consumption greedy)
+
+-----
+
+cholar function (at least 200 instructions)
+real parameters
+virtual parameters or function parameters
+
+we have to clip in mem the function
+
+----
+
+how many coins I need to solve the problem
+we continue until we solve the problem
+the list of L is given as parameter, ? , iterator of operator l, list of order of coins for coins of 5/2/1 € etc.
+
+----
+
+we need to keep all tests of prgm and results
+
+report start with definition of input and output
+we must update diagram by adding a metric
+metrics -> (sum of coins of the solution, sum of Si (array of solutions))
+------
+
+we cut exploration/complexity, so we reduce computation time efficiently
+
+----
+
+for cut we need
+- 1 condition
+- a metric
+
+----
+

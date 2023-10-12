@@ -1,0 +1,64 @@
+transitive closure : to build it, I need ..., so that I can determine (i,k)
+e.g if start (a,b), there exist (b,a)
+if (a,b) and (b,c) and (a,c) then time_ab + time_bc = time_ac
+iterative operations on graph to find the nearest path
+
+istransitive may need to be modified for exam
+
+not reflexive = no diagonal
+so irreflexive
+
+symetrical = if (a,b) in (x,y) then (b,a) in (y,x)
+
+transitive = if (x,y) and (y,z) then (x,z)
+
+if one condition does not satisfy, then no "relationType"
+
+------
+to constitute this mobility graph
+i have to represent matrix using geographic data
+
+matrix -> 
+symetrical (value (x,y) same as (y,x))
+reflexive (0 on diagonal)
+transitive (x,y) + (y,z) -> (x,z)
+
+-----
+
+-----
+
+An order in the broad sense (i.e. less strict)
+– Reminder: It is reflexive,
+anti-symmetrical and
+transitive
+– Let N * and the relation y |
+x (x divides exactly y,
+without remainder / or
+again y modulo x == 0).
+• Show that the relation is
+an order in the broad
+sense
+• Let X be a subset of N *
+such that X = {1, 2, 3, 5,
+10, 20, 30}
+Calculate the table
+representing x | y on X
+
+on fait un automate qui relie toutes les valeurs de l'ensemble (même (a,a)) en fonction de la grille
+(sagital diagram)
+ça aidera
+on remplit la grille
+(diagonale -> (a,a) (b,b) (c,c) etc.)
+first row -> (a,a), (a,b), etc.
+(a the smallest value)
+(z the highest, on the extremity)
+
+anti symmetry because
+transitive
+
+(1,3) to (5,5) we need (1,5) (in scheme)
+
+prehover -> not all elts are comparable (no possible ranking)
+
+from grid we have 7 notes, 22 transitions in example shown
+

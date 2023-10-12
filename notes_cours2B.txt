@@ -1,0 +1,28 @@
+(diapo Part 2 , 20/09/2023 a.m.)
+
+dynamic prgrming (we share part of rsrcs, parts of solutions of S)
+we just have to manipulate 1 array consuming few bytes
+if this solution is OK, we store it
+we don't store all the elements in memory
+dynamic prgming allows to reduce mem consumption
+
+in marketing, the most used is the star algo
+but we will present recursive algo
+
+-----
+
+we need to prove the feasibility and so the initial validity (of the project we are involved in)
+
+----
+
+either relation is reflexive or not
+anti symetric is : for each x and y, (y,x) not in R if (x,y) in R, except for x==y
+
+----
+
+transitive relation (very important to compute the cheapest itinerary)
+(djiktstra)
+
+from a diagram without transitivity
+i can build the matrix origin faster
+(f3 function in msc project)

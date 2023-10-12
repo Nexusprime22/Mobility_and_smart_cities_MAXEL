@@ -1,0 +1,9 @@
+this folder contains all the homeworks and works done
+it mainly concerns:
+- a pdf report for the 3 algorithms studied
+- the make change programs done with the help of Antonin and Guillaume (in make_change_programs folder)
+- the transitive algorithms in algos folder
+
+MAXEL Killian
+
+here is the link to github (even if it was mainly done locally)
