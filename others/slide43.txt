@@ -1,0 +1,25 @@
+If I associate a position in 2D space (resp. 3D) with each node (1, 2, 3, etc.) and each relation results in a directed segment connecting 2 nodes
+
+---
+
+i) does there exist the possibility of arranging nodes and edges without any edge  cutting?
+
+In a 2D or 3D space where nodes are represented as points and relations are represented as directed segments, it's possible to arrange nodes and edges in a way that avoids edge cutting, assuming the segments do not overlap. This essentially means that you can position the nodes in such a way that no two directed segments cross each other. The feasibility of such an arrangement depends on the specific relations and their geometric properties.
+
+---
+
+ii) can you calculate the best arrangement of the
+nodes of the relation so that the number of
+intersecting edges is minimized?
+
+To calculate the best arrangement of nodes to minimize the number of intersecting edges, you are essentially trying to solve a geometric optimization problem. This problem is often referred to as a "graph drawing" or "graph layout" problem, and it's a well-studied area in computer science and mathematics.
+
+There are various algorithms and techniques available to address this issue, such as:
+
+Force-directed layout: This is a common method where nodes are treated as charged particles, and forces are applied to edges to minimize their lengths and intersections.
+
+Orthogonal layout: In this approach, edges are drawn using horizontal and vertical segments to minimize intersections.
+
+Layered drawing: Particularly useful for directed acyclic graphs, this method arranges nodes in layers with edges mainly flowing downward to minimize intersections.
+
+Sugiyama framework: This is a method for hierarchically structured graphs, which arranges nodes in layers and minimizes the number of edge crossings.
