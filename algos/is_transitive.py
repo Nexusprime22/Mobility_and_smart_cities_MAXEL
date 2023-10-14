@@ -1,5 +1,9 @@
 def isTransitive(matrix):
 
+    print("Matrix:")
+    for row in matrix:
+        print(row)
+
     # Iterate through the rows (i) and columns (j) of the array
     for i in range(len(matrix)):
         for j in range(len(matrix[i])):

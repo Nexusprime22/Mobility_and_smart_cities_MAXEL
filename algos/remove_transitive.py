@@ -1,5 +1,3 @@
-import is_transitive
-
 def find_transitive_edges(edges):
     transitive_edges = []
     
@@ -30,9 +28,9 @@ def tr_graph(edges):
             break
         # Subtract transitive edges from the set of edges
         edges = subtract_transitive_edges(edges, transitive_edges)
-        print("new set of edges:",edges)
+        # print("new set of edges:",edges)
     # Print the final set of edges with removed transitive relations
-    print("\n"+str(edges))
+    print("\nfinal edges: "+str(edges))
     print("\n----------\n")
 
 print("\nfirst graph example:")
@@ -111,9 +109,9 @@ def remove_transitivity(matrix):
             break
         no_closure = remove_transitive_closure(matrix)
 
-        print("updated matrix:")
-        for row in no_closure:
-            print(row)
+        # print("updated matrix:")
+        # for row in no_closure:
+        #     print(row)
     
 
     print("final matrix:")
@@ -131,7 +129,6 @@ transitive_closure_matrix = [
 
 print("First Matrix:\n")
 updated_matrix = remove_transitivity(transitive_closure_matrix)
-print("is it still transitive ?", )
 
 transitive_closure_matrix = [
     # 1 2  3  5 10  20 30

@@ -94,16 +94,16 @@ def operate_on_matrix(matrix, coins=False):
     while True:
         # find transitive edges in the current set of edges
         transitive_edges = find_transitive_edges_to_add_matrix(matrix)
-        print(transitive_edges)
+        # print(transitive_edges)
         # if no more transitive edges are found, break the loop
         if not transitive_edges:
             break
 
         no_closure = apply_transitive_closure_matrix(matrix,coins)
 
-        print("updated matrix:")
-        for row in no_closure:
-            print(row)
+        # print("updated matrix:")
+        # for row in no_closure:
+        #     print(row)
 
     print("final matrix:")
     for row in no_closure:
