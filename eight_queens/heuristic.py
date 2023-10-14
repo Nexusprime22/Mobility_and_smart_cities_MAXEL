@@ -2,7 +2,7 @@ import random
 import math
 
 def is_safe(board, row, col):
-    # Check if it's safe to place a queen at board[row][col]
+    # check if safe to place a queen at board[row][col]
     for i in range(col):
         if board[i] == row or \
            board[i] - i == row - col or \
@@ -34,7 +34,8 @@ def simulated_annealing(board, max_temp, min_temp, cooling_rate):
         new_conflicts = count_conflicts(new_solution)
 
         if new_conflicts == 0:
-            return new_solution  # A solution with zero conflicts is found.
+            # solution with no conflicts is found
+            return new_solution
 
         delta_e = new_conflicts - current_conflicts
 
@@ -46,7 +47,8 @@ def simulated_annealing(board, max_temp, min_temp, cooling_rate):
 
         temperature *= cooling_rate
 
-    return best_solution  # Return the best solution found
+    # Return the best solution found
+    return best_solution
 
 def print_board(board):
     for row in board:
@@ -57,5 +59,5 @@ def eight_queens_heuristic(size, max_temp, min_temp, cooling_rate):
     solution = simulated_annealing(board, max_temp, min_temp, cooling_rate)
     print_board(solution)
 
-# Example usage
+
 eight_queens_heuristic(size=8, max_temp=100, min_temp=0.001, cooling_rate=0.95)
